@@ -7,13 +7,14 @@ import Kids from "./Pages/Kids/Kids"
 import Error from "./Pages/Error/Error"
 import Navbar from "./components/Navbar"
 import gsap from 'gsap';
+import Footer from './components/Footer';
 function App() {
   const tl=gsap.timeline();
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar timeline={tl}/>
-
+       
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/man" element={<Man/>}/>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/kids" element={<Kids/>}/>
           <Route path="*" element={<Error/>}/>
         </Routes>
+         <Footer/>
       </BrowserRouter>
 
     </div>
