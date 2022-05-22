@@ -8,9 +8,7 @@ import Error from "./Pages/Error/Error"
 import Navbar from "./components/Navbar"
 import gsap from 'gsap';
 function App() {
-  const tl=gsap.timeline({
-    paused:"true"
-  });
+  const tl=gsap.timeline();
   return (
     <div className="App">
       <BrowserRouter>

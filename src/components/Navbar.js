@@ -4,33 +4,38 @@ import "./Navbar.css"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { Badge } from '@mui/material';
-import gsap, { Expo, Power2 } from 'gsap';
+import  {Power2 } from 'gsap';
 const Navbar = ({timeline}) => {
   const [active,setActive]=useState(true);
   const [toggleIcon,setToggleIcon]=useState(true);
   const navigate=useNavigate();
 
   useEffect(()=>{
+    timeline.from(".navbar",{
+      opacity:0,
+      duration:1.5,
+      ease:Power2.easeInOut
+    })
+
     timeline.fromTo(".nav__item",{
       y:"-100%",
+      opacity: 0
   },{
-      duration: .5,
+      duration: 1.5,
       opacity: 1,
       y: "0%",
       stagger: 0.25
   });
 
-
-
-  },[])
- 
+  },[timeline])
+  
 
   return (
     <div className='navbar'>
        <div className="logo" onClick={()=>navigate("/")}>
         <h3>Flaw</h3>
       </div>
-      <div className={toggleIcon ? `nav__toggler`  : `nav__toggler toggle`} onClick={() => { setActive(!active); setToggleIcon(!toggleIcon) }}>
+      <div className={toggleIcon ? `nav__toggler` : `nav__toggler toggle`} onClick={() => { setActive(!active); setToggleIcon(!toggleIcon) }}>
         {
           toggleIcon ? <p>menu</p> : <p>close</p>
         }
