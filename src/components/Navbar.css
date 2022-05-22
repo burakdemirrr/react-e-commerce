@@ -1,54 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 .navbar{
-    width: 100%;
     display: flex;
     align-items: center;
+    flex:1;
     justify-content: space-between;
-    padding:20px 50px;
+    padding:10px 50px;
+    widtH:100%;
+    position: sticky;
+    height:12vh;
+    gap:20px;
+    min-height: 10vh;
+    max-height: 15vh;
+    opacity: 1;
+    top:0;
     font-family: 'Nunito', sans-serif;
+}
+.logo{
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 .logo h3{
     font-family: 'Zen Loop', cursive;
-    font-size:3.7rem;
-    cursor: pointer;
-    letter-spacing: .4px;
+    font-size:4rem;
+    letter-spacing: .4px;    
 }
-nav ul{
-    display: flex;
-    gap:30px;
-    align-items: center;
+.mobile-nav{
+    display: none;
+    gap:100px;
+    z-index: 2;
+    position: relative;
 }
-nav ul li{
-    list-style:none;
+.mobile-nav li{
+    list-style: none;
+    margin-left:180px;
 }
-nav ul li a{
-    color:black;
+.mobile-nav li a {
     text-decoration: none;
-    font-weight: 600;
+    color:rgb(243, 233, 233);
+    letter-spacing:.3px;
+    font-weighT:600;
+    font-size:4.5rem;
+    transform: rotate(45deg);
 }
-nav ul li::after{
+.mobile-nav li::after{
     content: '';
     width:0%;
-    height:1.5px;
+    height:2px;
     display: block;
-    border:0;
-    background: black;
+    background: rgb(236, 236, 236);
     transition: all 0.3s ease;
 }
-nav ul li:hover::after{
+.mobile-nav  li:hover::after{
     width:100%;
 }
 .right{
     display: flex;
+    align-items: center;
+    cursor: pointer;
     gap:15px;
 }
 .right .icon{
-    font-size: 1.7rem;
-    cursor: pointer;
-    color:rgba(21, 20, 20, 0.851);
+    color:black;
+    font-size:26px;
 }
 .right .icon:hover{
-    color:gray;
+    color:rgb(166, 166, 175);
 }
-
+.nav__toggler div{
+    width:2.6rem;
+    height:0.25rem;
+    margin:0.4rem;
+    border-radius: 55px;
+    background: rgb(172, 154, 154);
+    transition: 0.2s ease-in-out;
+}
+.nav__active{
+    transform: translateY(0%);
+    position: absolute;
+    top:0;
+    right:0;
+    z-index:2;
+    width: 100%;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(0, 0, 0); 
+    transition:1s;
+}
+.nav__toggler{
+    cursor:pointer;
+    z-index: 3;
+    display: block;
+}
+.nav__toggler p{
+    font-size:1.3rem;
+    font-weight: bold;
+}
+.nav__toggler:hover{
+    color: rgb(150, 148, 148);
+}
+.toggle{
+    color:white;
+}
+.toggle:hover{
+    color: rgb(184, 179, 179);
+}
+.bg{
+    position: absolute;
+    z-index:-1;
+    width: 250px;
+    filter: grayscale(1);
+    height: 300px;
+}
+.bg1{
+    top: 45px;
+    left: 60px;
+    background: url(pexels-cottonbro-7969617.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: 1s ease-in-out;
+}
+.bg2{
+    top: 205px;
+    left: 220px;
+    background: url(pexels-dziana-hasanbekava-5480693.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: 1s ease-in-out;
+}
+.bg3{
+    top: 425px;
+    left: 60px;
+    background: url(terricks-noah-vId1rcPmSz0-unsplash.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    background-position: top;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: 1s ease-in-out;
+}
+.li1:hover ~ .bg1,
+.li2:hover ~ .bg2,
+.li3:hover ~ .bg3{
+    opacity: 1;
+    transform: translateY(0%);
+    transition: 1s ease-in-out;
+}

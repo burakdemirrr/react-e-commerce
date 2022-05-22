@@ -1,25 +1,55 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./Navbar.css"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { Badge } from '@mui/material';
-const Navbar = () => {
-  const [active,setActive]=useState(false);
+import gsap, { Expo, Power2 } from 'gsap';
+const Navbar = ({timeline}) => {
+  const [active,setActive]=useState(true);
+  const [toggleIcon,setToggleIcon]=useState(true);
   const navigate=useNavigate();
+
+  useEffect(()=>{
+    timeline.fromTo(".nav__item",{
+      y:"-100%",
+  },{
+      duration: .5,
+      opacity: 1,
+      y: "0%",
+      stagger: 0.25
+  });
+
+
+
+  },[])
+    function toggle(){
+    timeline.play();
+}
+function togglec(){
+    timeline.reverse();
+}
+
+
   return (
     <div className='navbar'>
-      <div className="logo" onClick={()=>navigate("/")}><h3>FLAW</h3></div>
+       <div className="logo" onClick={()=>navigate("/")}>
+        <h3>Flaw</h3>
+      </div>
+      <div className={toggleIcon ? `nav__toggler`  : `nav__toggler toggle`} onClick={() => { setActive(!active); setToggleIcon(!toggleIcon) }}>
+        {
+          toggleIcon ? <p onClick={()=>toggle()}>menu</p> : <p  onClick={()=>togglec()}>close</p>
+        }
+      </div>
+      <ul className={active ? `mobile-nav` : "mobile-nav nav__active"} onClick={() => { setActive(!active); setToggleIcon(!toggleIcon) }}>
+        <li className='li1 nav__item'><a href="man">Man</a></li>
+        <li className='li2 nav__item'><a href="woman">Woman</a></li>
+        <li className='li3 nav__item'><a href="kids">Kids</a></li>
+        <div className="bg1 bg"></div>
+        <div className="bg2 bg"></div>
+        <div className="bg3 bg"></div>
 
-      <nav>
-        <ul >
-          <li><a href="man">MAN</a></li>
-          <li><a href="woman">WOMAN</a></li>
-          <li><a href="kids">KIDS</a></li>
-        </ul>
-      </nav>
-
-
+      </ul>
       <div className="right">
       <Badge badgeContent={4} color="warning">
         <ShoppingCartIcon className="icon"/>

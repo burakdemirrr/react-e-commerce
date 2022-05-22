@@ -6,11 +6,15 @@ import Man from "./Pages/Man/Man"
 import Kids from "./Pages/Kids/Kids"
 import Error from "./Pages/Error/Error"
 import Navbar from "./components/Navbar"
+import gsap from 'gsap';
 function App() {
+  const tl=gsap.timeline({
+    paused:"true"
+  });
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar/>
+        <Navbar timeline={tl}/>
 
         <Routes>
           <Route path="/" element={<Home/>}/>
