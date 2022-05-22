@@ -23,13 +23,7 @@ const Navbar = ({timeline}) => {
 
 
   },[])
-    function toggle(){
-    timeline.play();
-}
-function togglec(){
-    timeline.reverse();
-}
-
+ 
 
   return (
     <div className='navbar'>
@@ -38,7 +32,7 @@ function togglec(){
       </div>
       <div className={toggleIcon ? `nav__toggler`  : `nav__toggler toggle`} onClick={() => { setActive(!active); setToggleIcon(!toggleIcon) }}>
         {
-          toggleIcon ? <p onClick={()=>toggle()}>menu</p> : <p  onClick={()=>togglec()}>close</p>
+          toggleIcon ? <p>menu</p> : <p>close</p>
         }
       </div>
       <ul className={active ? `mobile-nav` : "mobile-nav nav__active"} onClick={() => { setActive(!active); setToggleIcon(!toggleIcon) }}>
