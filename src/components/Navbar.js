@@ -5,10 +5,15 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { Badge } from '@mui/material';
 import  {Power2 } from 'gsap';
+import { useSelector } from 'react-redux';
+import { getCartItems } from '../features/CartSlice';
 const Navbar = ({timeline}) => {
   const [active,setActive]=useState(true);
   const [toggleIcon,setToggleIcon]=useState(true);
   const navigate=useNavigate();
+
+  const cartItem=useSelector(getCartItems);
+  console.log(cartItem.length);
 
   useEffect(()=>{
     timeline.from(".navbar",{
@@ -48,7 +53,7 @@ const Navbar = ({timeline}) => {
 
       </ul>
       <div className="right">
-      <Badge badgeContent={4} color="warning">
+      <Badge badgeContent={cartItem.length} color="warning">
         <ShoppingCartIcon className="icon"/>
       </Badge>
         <AccountBoxIcon className="icon"/>
