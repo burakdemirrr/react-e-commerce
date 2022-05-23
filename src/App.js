@@ -16,8 +16,8 @@ function App() {
         <Navbar timeline={tl}/>
        
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/man" element={<Man/>}/>
+          <Route path="/" element={<Home timeline={tl} />}/>
+          <Route path="/man" element={<Man timeline={tl} />}/>
           <Route path="/woman" element={<Woman/>}/>
           <Route path="/kids" element={<Kids/>}/>
           <Route path="*" element={<Error/>}/>

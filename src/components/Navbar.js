@@ -16,18 +16,16 @@ const Navbar = ({timeline}) => {
       duration:1.5,
       ease:Power2.easeInOut
     })
-
     timeline.fromTo(".nav__item",{
-      y:"-100%",
-      opacity: 0
-  },{
-      duration: 1.5,
-      opacity: 1,
-      y: "0%",
-      stagger: 0.25
-  });
-
-  },[timeline])
+        y:"-100%",
+        opacity: 0
+    },{
+        duration: 1.5,
+        opacity: 1,
+        y: "0%",
+        stagger: 0.25
+    });
+    },[timeline])
   
 
   return (
