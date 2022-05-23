@@ -18,9 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home timeline={tl} />}/>
           <Route path="/man" element={<Man timeline={tl} />}/>
-          <Route path="/woman" element={<Woman/>}/>
-          <Route path="/kids" element={<Kids/>}/>
-          <Route path="*" element={<Error/>}/>
+          <Route path="/woman" element={<Woman timeline={tl}/>}/>
+          <Route path="/kids" element={<Kids timeline={tl}/>}/>
+          <Route path="*" element={<Error timeline={tl}/>}/>
         </Routes>
          <Footer/>
       </BrowserRouter>

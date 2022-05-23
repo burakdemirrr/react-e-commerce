@@ -1,6 +1,7 @@
 import { Power2 } from 'gsap';
 import React, { useEffect, useRef } from 'react'
 import "./Home.css"
+import Transition from "../../components/Transition"
 import Slide from "./Slide"
 const Home = ({timeline}) => {
 
@@ -10,7 +11,8 @@ const Home = ({timeline}) => {
     timeline.from(imgref.current,{
       opacity:0,
       duration:0.7,
-      ease:Power2.easeIn
+      delay:1.5,
+      ease:Power2.easeInOut
     },"-=3")
 
   })

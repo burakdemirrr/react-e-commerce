@@ -1,8 +1,11 @@
 import React from 'react'
+import Transition from '../../components/Transition'
 
-const Kids = () => {
+const Kids = ({timeline}) => {
   return (
-    <div>Kids</div>
+    <div>
+      <Transition timeline={timeline}/>
+      Kids</div>
   )
 }
 

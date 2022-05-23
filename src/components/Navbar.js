@@ -18,7 +18,8 @@ const Navbar = ({timeline}) => {
   useEffect(()=>{
     timeline.from(".navbar",{
       opacity:0,
-      duration:1.5,
+      delay:.7,
+      duration:1,
       ease:Power2.easeInOut
     })
     timeline.fromTo(".nav__item",{
