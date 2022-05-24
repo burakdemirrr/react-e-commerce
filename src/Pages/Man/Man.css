@@ -1,0 +1,55 @@
+.right img{
+    width:250px;
+}
+.main{
+    min-height: 90vh;
+}
+.left{
+    position: absolute;
+    bottom:155px;
+    left:95px;
+}
+.left span{
+    display: inline-block;
+    margin:0 -100px;
+    font-size:7rem;
+    transform: rotate(270deg);
+}
+.main .right img:nth-child(1){
+    position: absolute;
+    left:46%;
+    top:10%;
+    z-index: 1;
+    width:280px;
+}
+.main .right img:nth-child(2){
+    position: absolute;
+    left:55%;
+    top:10%;
+    width:450px;
+}
+.main .right img:nth-child(3){
+    position: absolute;
+    left:74.3%;
+    bottom:0.5%;
+    width:300px;
+}
+.second{
+    padding:100px 90px;
+}
+.items img{
+    width:250px;
+}
+.prod{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 45px;
+}
+.sale{
+    display: flex;
+    flex-direction: column;
+}
+.sale h1{
+    text-align: center;
+}

@@ -12,12 +12,12 @@ export const slice=createSlice({
 
             state.cartItems.push({
                 id: pseudoID,
-                name:action.payload.product.name,
-                img:action.payload.product.img,
-                productID: action.payload.product.id,
+                name:action.payload.item.name,
+                img:action.payload.item.img,
+                productID: action.payload.item.id,
                 quantity: action.payload.quantity,
-                price: action.payload.product.price,
-                totalPrice: action.payload.quantity * action.payload.product.price
+                price: action.payload.item.price,
+                totalPrice: action.payload.quantity * action.payload.item.price
             });
         },
         removeFromCart: (state, action) => {
